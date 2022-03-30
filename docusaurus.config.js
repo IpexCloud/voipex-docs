@@ -15,6 +15,7 @@ const config = {
   favicon: 'img/favicon.png',
   organizationName: 'IpexCloud',
   projectName: 'voipex-docs',
+  trailingSlash: false,
   presets: [
     [
       'classic',
