@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvoipex_docs=self.webpackChunkvoipex_docs||[]).push([[118],{2576:function(s){s.exports=JSON.parse('{"name":"access","permalink":"/voipex-docs/docs/tags/access","docs":[{"id":"auth","title":"Authorization","description":"Get access token","permalink":"/voipex-docs/docs/auth"}],"allTagsPath":"/voipex-docs/docs/tags"}')}}]);

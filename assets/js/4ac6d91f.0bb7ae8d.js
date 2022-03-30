@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvoipex_docs=self.webpackChunkvoipex_docs||[]).push([[5025],{5552:function(e){e.exports=JSON.parse('{"permalink":"/voipex-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

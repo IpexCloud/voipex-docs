@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkvoipex_docs=self.webpackChunkvoipex_docs||[]).push([[7891],{5733:function(s){s.exports=JSON.parse('{"name":"access","permalink":"/docs/tags/access","docs":[{"id":"auth","title":"Authorization","description":"Get access token","permalink":"/docs/auth"}],"allTagsPath":"/docs/tags"}')}}]);

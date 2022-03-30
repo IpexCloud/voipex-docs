@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkvoipex_docs=self.webpackChunkvoipex_docs||[]).push([[9697],{5260:function(e){e.exports=JSON.parse('{"permalink":"/voipex-docs/blog/tags/hello","page":1,"postsPerPage":10,"totalPages":1,"totalCount":2,"previousPage":null,"nextPage":null,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
