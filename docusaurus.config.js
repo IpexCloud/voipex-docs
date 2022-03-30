@@ -9,7 +9,7 @@ const config = {
   title: 'Voipex.io docs',
   tagline: 'Documentation for Voipex API services',
   url: 'https://voipex.io',
-  baseUrl: '/',
+  baseUrl: '/voipex-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.png',
