@@ -6,7 +6,7 @@ tags:
   - intro
   - pauses
   - agents
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 We are working on this documentation and it will be introduced soon

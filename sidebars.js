@@ -24,7 +24,7 @@ const sidebars = {
     {
       type: "category",
       label: "Callcenter API",
-      items: ["api/callcenter-api/getting-started", "api/callcenter-api/pauses"],
+      items: ["api/callcenter-api/getting-started", "api/callcenter-api/dialer", "api/callcenter-api/pauses"],
     },
   ],
 };
