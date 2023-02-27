@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkvoipex_docs=self.webpackChunkvoipex_docs||[]).push([[9546],{8314:function(s){s.exports=JSON.parse('{"allTagsPath":"/voipex-docs/blog/tags","slug":"/voipex-docs/blog/tags/docusaurus","name":"docusaurus","count":4,"permalink":"/voipex-docs/blog/tags/docusaurus"}')}}]);
