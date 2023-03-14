@@ -19,12 +19,69 @@ This introduction contains a brief description to help you start interacting wit
 ### Authentication
 
 Authentication is based on providing **Bearer {access_token}** into Authorization header with every request. To obtain an access_token, make POST request to
-[our auth server](https://restapi.ipex.cz/v1/sso/login) with credentials contained in the body.
+[our auth server](https://auth.voipex.io) with credentials contained in the body.
 
-#### Example of fetching the access_token
+### Request
+
+#### HTTP
+
+```json
+POST /token HTTP/1.1
+Host: auth.voipex.io
+Content-Type: application/x-www-form-urlencoded
+
+client_id=api&username=your%40email.com&password=*****&grant_type=password
+```
+
+#### Using [curl](https://curl.se/)
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"email": "email@ipex.cz", "password": "password123"}' https://restapi.ipex.cz/v1/sso/login | jq ".access_token"
+curl -L "https://auth.voipex.io/token" -H "Content-Type: application/x-www-form-urlencoded" -d "client_id=api" -d "username=your%40email.com" -d "password=*****" -d "grant_type=password"
+```
+
+#### Using [Node.js](https://nodejs.org/en/) and [axios](https://github.com/axios/axios)
+
+```js
+const axios = require('axios')
+const qs = require('qs')
+const data = qs.stringify({
+  'client_id': 'api',
+  'username': 'your@email.com',
+  'password': '*****',
+  'grant_type': 'password' 
+})
+const config = {
+  method: 'post',
+  url: 'https://auth.voipex.io/token',
+  headers: { 
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  data
+}
+
+axios(config)
+.then(response => {
+  console.log(JSON.stringify(response.data))
+})
+.catch(error => {
+  console.log(error)
+})
+```
+
+#### Using [Python](https://www.python.org) and [http.client](https://docs.python.org/3/library/http.client.html)
+
+```py
+import http.client
+
+conn = http.client.HTTPSConnection("auth.voipex.io")
+payload = 'client_id=api&username=your%40email.com&password=*****&grant_type=password'
+headers = {
+  'Content-Type': 'application/x-www-form-urlencoded'
+}
+conn.request("POST", "/token", payload, headers)
+res = conn.getresponse()
+data = res.read()
+print(data.decode("utf-8"))
 ```
 
 ### Response
@@ -33,49 +90,14 @@ Example response below contains fresh access token with specified expiration tim
 
 ```json
 {
-  "accessToken": "eyJhbGc...",
-  "tokenType": "Bearer",
-  "refreshToken": "eyJhbGc...",
-  "expiresAt": "2022-03-28T14:21:38.000Z",
-  "expiresIn": 3000,
-  "id": "77751f31-798f-4ae5-859b-dd36514fdaa5",
-  "customer": {
-    "id": 1
-  },
-  "provider": {
-    "id": 1
-  },
-  "operator": {
-    "id": 1
-  },
-  "firstName": "John",
-  "lastName": "Doe",
-  "username": "ipex@ipex.cz",
-  "level": "user",
-  "roles": {
-    "communicator": [
-      "owner"
-    ],
-    "pbx": []
-  },
-  "branding": {
-    "theme": "green",
-    "logo": null
-  },
-  "access_token": "eyJhbGci....",
-  "token_type": "Bearer",
-  "refresh_token": "eyJhbGciO...",
-  "expires_in": 3000,
-  "expires_at": 1648477298000,
-  "anvilId": "77751f31-798f-4ae5-859b-dd36514fdaa5",
-  "userId": "77751f31-798f-4ae5-859b-dd36514fdaa5",
-  "email": "ipex@ipex.cz",
-  "customerId": 1,
-  "providerId": 1,
-  "operatorId": 1,
-  "pbxRoles": [],
-  "commRoles": [
-    "owner"
-  ]
+    "access_token": "*****",
+    "expires_in": 3000,
+    "refresh_expires_in": 7200,
+    "refresh_token": "*****",
+    "token_type": "Bearer",
+    "not-before-policy": 0,
+    "session_state": "fbf59841-8288-4a71-8192-2bd4bf8a5c50",
+    "scope": "profile email"
 }
+
 ```
